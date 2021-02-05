@@ -11,9 +11,7 @@ class CodeConfirmBloc extends Bloc<CodeConfirmEvent, CodeConfirmState> {
 
   @override
   Stream<CodeConfirmState> mapEventToState(CodeConfirmEvent event) async* {
-    CodeConfirmState result =
-        (await _codeConfirmRepository.approveCode(event.code))
-            .fold((_) => DeniedCode(_), (_) => ApprovedCode());
-    yield result;
+    yield (await _codeConfirmRepository.approveCode(event.code))
+        .fold((_) => DeniedCode(_), (_) => ApprovedCode());
   }
 }
