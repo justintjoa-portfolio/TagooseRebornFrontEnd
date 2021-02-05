@@ -1,7 +1,8 @@
 import "dart:io";
+import 'package:http/http.dart';
 
 class FirebaseCodeProvider {
   void textCode() async {}
 
-  Future<HttpResponse> approveCode(String code) async {}
+  Future<Response> approveCode(String code) async {}
 }
