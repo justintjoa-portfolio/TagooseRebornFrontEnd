@@ -9,4 +9,12 @@ abstract class BaseRepository {
       return Right(input.body);
     }
   }
+
+  String convertToJsonPairs(Map<String, String> input) {}
+
+  Map<String, String> convertToMap(String input) {}
+
+  String convertToJsonArray(List<String> input) {}
+
+  List<String> convertToList(String input) {}
 }
