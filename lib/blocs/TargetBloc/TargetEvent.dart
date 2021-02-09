@@ -1,3 +1,7 @@
 part of "./TargetBloc.dart";
 
-class TargetEvent {}
+abstract class TargetEvent {}
+
+class InitialEvent extends TargetEvent {}
+
+class CancelTrip extends TargetEvent {}

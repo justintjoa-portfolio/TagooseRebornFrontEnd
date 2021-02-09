@@ -1,5 +1,6 @@
 import 'package:either_option/either_option.dart';
 import 'package:http/http.dart';
+import 'package:meme_front_end/Entities/Internal/Target.dart';
 
 abstract class BaseRepository {
   Either<String, String> processRequest(Response input) {
@@ -10,11 +11,9 @@ abstract class BaseRepository {
     }
   }
 
-  String convertToJsonPairs(Map<String, String> input) {}
+  String convertToJson(List<Target> input) {}
 
-  Map<String, String> convertToMap(String input) {}
+  List<Target> convertToList(String input) {}
 
-  String convertToJsonArray(List<String> input) {}
-
-  List<String> convertToList(String input) {}
+  Target findTarget(String name, List<Target> input) {}
 }

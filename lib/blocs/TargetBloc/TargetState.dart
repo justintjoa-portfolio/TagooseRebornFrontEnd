@@ -10,3 +10,7 @@ class LoadData extends TargetState {
 
   LoadData(this.imageName, this.coordinates);
 }
+
+class NoData extends TargetState {}
+
+class LoadingState extends TargetState {}

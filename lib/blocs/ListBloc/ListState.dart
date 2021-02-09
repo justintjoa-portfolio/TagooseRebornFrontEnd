@@ -4,6 +4,8 @@ abstract class ListState {}
 
 class InitialState extends ListState {}
 
+class LoadingState extends ListState {}
+
 class LoadState extends ListState {
   List<String> images;
 
