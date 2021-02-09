@@ -22,6 +22,7 @@ class ListBloc extends Bloc<ListEvent, ListState> {
 
   @override
   Stream<ListState> mapEventToState(ListEvent event) async* {
+    yield LoadingState();
     if (event is InitialEvent) {
       yield LoadState(await _listRepository.getAllPhotos());
     }

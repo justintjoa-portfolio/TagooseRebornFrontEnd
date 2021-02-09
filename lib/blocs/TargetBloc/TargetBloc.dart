@@ -14,11 +14,19 @@ class TargetBloc extends Bloc<TargetEvent, TargetState> {
 
   TargetBloc(this._targetRepository) : super(InitialState());
 
+  //target bloc - when user taps on destination to see what they're looking for
+  //can cancel the destination
+
   @override
   Stream<TargetState> mapEventToState(TargetEvent event) async* {
-    if (event is TargetEvent) {
-      Target input = await _targetRepository.getTarget();
-      yield LoadData(input.coordinates, input.name);
+    yield LoadingState();
+    if (event is InitialEvent) {
+      yield (await _targetRepository.getTarget())
+          .fold((_) => NoData(), (_) => LoadData(_.coordinates, _.name));
+    }
+    if (event is CancelTrip) {
+      await _targetRepository.cancelTrip();
+      yield NoData();
     }
   }
 }
