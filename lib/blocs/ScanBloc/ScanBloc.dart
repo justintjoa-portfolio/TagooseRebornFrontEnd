@@ -7,4 +7,4 @@ part "./ScanEvent.dart";
 
 part "./ScanState.dart";
 
-class ScanBloc extends Bloc<ScanEvent, ScanState> {}
+class ScanBloc {}
