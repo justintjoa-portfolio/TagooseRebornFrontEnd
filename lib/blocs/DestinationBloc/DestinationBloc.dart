@@ -5,3 +5,12 @@ import 'package:meme_front_end/repositories/GuideRepository.dart';
 
 part "./DestinationEvent.dart";
 part "./DestinationState.dart";
+
+class DestinationBloc extends Bloc<DestinationEvent, DestinationState> {
+
+
+  @override
+  Stream<DestinationState> mapEventToState(DestinationEvent event) async* {
+    i
+  }
+}
